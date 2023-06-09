@@ -1,7 +1,6 @@
     const HomePage =
         `<main id="page_content">
             <div class="content_title">
-                <h1> CardView </h1>
             </div>
             <div id="cards_container">
                 <div idx="1" class="card">

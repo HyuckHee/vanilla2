@@ -29,16 +29,16 @@ export default class {
             const params = pathValidation(currentPath, routePath);
             if (!params) continue;
             routerContext.setState({ params });
+            // this.contentTitle.titleChange();
             let Page = this.routes[i].component;
             this.target.innerHTML = Page;
             return;
         }
-        new this.NotFoundPage(this.target);
+        this.target.innerHTML = this.NotFoundPage;
     }
     addLinkChangeHandler() {
         // a 태그의 이벤트를 바꾼다
-        this.target.addEventListener('click', e => {
-            debugger;
+        document.querySelector('.header').addEventListener('click', e => {
             const { target } = e;
             const closest = target.closest('a');
             if (!closest || closest.getAttribute('target')) return;

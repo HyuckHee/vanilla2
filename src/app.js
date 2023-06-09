@@ -1,4 +1,5 @@
 import Header from './components/Header.js'
+import ContentTitle from './components/ContentTitle.js'
 
 
 export default class {
@@ -10,6 +11,7 @@ export default class {
 
     render() {
         new Header(this.target);
+        new ContentTitle();
         // new Router(this.target, this.routes, /*this.NotFoundPage*/ `<h1>Not FoundPage</h1>`)
     }
 }

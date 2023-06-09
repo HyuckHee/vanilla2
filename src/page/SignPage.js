@@ -1,7 +1,6 @@
 const SignPage =
     `<main id="page_content">
         <div class="content_title">
-            <h1> Hello, GreatPeoPle!</h1>
         </div>
         <div id="form_container">
                 <span class="form_elem">
