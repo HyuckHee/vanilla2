@@ -1,20 +1,17 @@
-import Router from '../router.js'
+import HomePage from "../page/HomePage.js";
+import SignPage from "../page/SignPage.js";
+import Router from "../router.js"
 
 export default class {
-    constructor() {
-        this.name = "Header"
+    constructor(target) {
+        this.target = target;
+        this.routes = [
+            {path: '/' , component : this.getHtml()+HomePage},
+            {path: '/sign' , component : this.getHtml()+SignPage},
+        ];
+        this.render();
     }
-    homeClick() {
-        window.history.pushState({ data: 'some data' }, 'Some history entry title', '/');
 
-
-    }
-    signClick(){
-        window.history.pushState({ data: 'some data' }, 'Some history entry title', '/sign/');
-    }
-    ff ($){
-        $.innerHTML = Router.view;
-    }
     getHtml(){
         return`
             <header class="header">
@@ -26,5 +23,8 @@ export default class {
                 </div>
             </header>
         `
+    }
+    render() {
+        new Router(this.target,this.routes,`<h1>Not FoundPage</h1>`);
     }
 }
