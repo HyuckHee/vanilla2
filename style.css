@@ -2,6 +2,10 @@ body {
     margin: 0;
     padding: 0;
 }
+a {
+    text-decoration: none;
+    color : white;
+}
 
 /* GNB */
 header {
@@ -29,6 +33,7 @@ header {
     margin-left: auto;
     cursor : pointer;
 }
+
 
 #page_content {
     padding: 20px;
