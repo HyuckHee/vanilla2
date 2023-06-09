@@ -26,9 +26,9 @@ GNB는 다음 2가지 요소로 구성됩니다.
 
 > 주어진 <b>`Header.js`</b> 파일에 코드를 작성합니다.
 
-* HOME 메뉴를 클릭하면 URL 주소는 `//` 가 되며, 인사 정보를 카드 형태로 볼 수 있는 페이지가 렌더링 됩니다.
+* HOME 메뉴를 클릭하면 URL 주소는 `/` 가 되며, 인사 정보를 카드 형태로 볼 수 있는 페이지가 렌더링 됩니다.
   ![img_gnb_func_02.png](https://grepp-programmers.s3.ap-northeast-2.amazonaws.com/files/production/c8a08e39-93aa-4ebd-a248-85d63a094463/img_gnb_func_02.png)
-* SIGNUP 메뉴를 클릭하면 URL 주소는 `//signup` 가 되며, 인사 정보를 등록할 수 있는 페이지가 렌더링 됩니다.
+* SIGNUP 메뉴를 클릭하면 URL 주소는 `/signup` 가 되며, 인사 정보를 등록할 수 있는 페이지가 렌더링 됩니다.
   ![img_gnb_func_04.png](https://grepp-programmers.s3.ap-northeast-2.amazonaws.com/files/production/ef50b305-1cca-42cb-8543-1390d60b5940/img_gnb_func_04.png)
 
 *참고: 컴포넌트를 작성하는데 필요한 함수 등을 작성하기 위해 새로운 파일을 생성하는 것은 가능합니다.*
