@@ -1,49 +1,71 @@
-    const HomePage =
-        `<main id="page_content">
-            <div class="content_title">
-            </div>
-            <div id="cards_container">
-                <div idx="1" class="card">
-                    <div class="card_plane card_plane--front">Heedo</div>
-                    <div class="card_plane card_plane--back">ESTJ</div>
-                </div>
-                <div idx="2" class="card">
-                    <div class="card_plane card_plane--front">Kevin</div>
-                    <div class="card_plane card_plane--back">INTJ</div>
-                </div>
-                <div idx="3" class="card">
-                    <div class="card_plane card_plane--front">Dalmi</div>
-                    <div class="card_plane card_plane--back">INFJ</div>
-                </div>
-                <div idx="4" class="card">
-                    <div class="card_plane card_plane--front">Buzz</div>
-                    <div class="card_plane card_plane--back">INFP</div>
-                </div>
-                <div idx="5" class="card">
-                    <div class="card_plane card_plane--front">Edwin</div>
-                    <div class="card_plane card_plane--back">ISTJ</div>
-                </div>
-                <div idx="6" class="card">
-                    <div class="card_plane card_plane--front">Whale</div>
-                    <div class="card_plane card_plane--back">INTP</div>
-                </div>
-                <div idx="7" class="card">
-                    <div class="card_plane card_plane--front">Junho</div>
-                    <div class="card_plane card_plane--back">ENFJ</div>
-                </div>
-                <div idx="8" class="card">
-                    <div class="card_plane card_plane--front">Yumi</div>
-                    <div class="card_plane card_plane--back">ISFP</div>
-                </div>
-                <div idx="9" class="card">
-                    <div class="card_plane card_plane--front">Tom</div>
-                    <div class="card_plane card_plane--back">INTP</div>
-                </div>
-                <div idx="10" class="card">
-                    <div class="card_plane card_plane--front">Barbie</div>
-                    <div class="card_plane card_plane--back">INTJ</div>
-                </div>
-            </div>
-        </main>
-    `
-    export default HomePage;
+import routerContext from '../router-context.js';
+
+    export default class {
+        constructor(target) {
+            this.title = 'home'
+            this.htmlStr = '';
+
+            this.routerContext = routerContext;
+            console.log('a')
+            this.addEvent();
+            // this.myList.innerHTML = this.myList;
+        }
+
+        getHtml2(data){
+                for(let i =0; i<data.length; i++){
+                    this.htmlStr += `<div idx="${i+1}" class="card">
+                        <div class="card_plane card_plane--front">${data[i].name}</div>
+                    </div>`
+                }
+                debugger;
+        }
+
+        addEvent(){
+            document.querySelector('.header').addEventListener('click', e => {
+                    document.querySelector('#cards_container').insertAdjacentHTML(
+                        'beforeend',
+                        this.htmlStr
+                    );
+            });
+        }
+
+        bbb() {
+            this.aaa();
+            let dom = `<main id="page_content">
+                                <div class="content_title">
+                                </div>
+                                <div id="cards_container">
+                                </div>
+                            </main>
+                        `
+            return dom;
+        }
+
+         aaa() {
+
+            fetch("src/data/new_data.json")
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error, status = ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    this.getHtml2(data);
+
+                    document.querySelector('#cards_container').insertAdjacentHTML(
+                        'beforeend',
+                        this.htmlStr
+                    );
+
+
+                })
+                .catch((error) => {
+                    const p = document.createElement("p");
+                    p.appendChild(document.createTextNode(`Error: ${error.message}`));
+                    // document.body.insertBefore(p, myList);
+                });
+             debugger;
+
+        }
+    }

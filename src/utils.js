@@ -19,8 +19,10 @@ const pathValidation = (currentPath, routePath) => {
     for (index = 0; index < currentPath.length; index++) {
         if (/^:/.test(routePath[index])) {
             params[routePath[index].slice(1)] = currentPath[index];
+            debugger;
             continue;
         }
+        debugger;
         if (currentPath[index] !== routePath[index]) {
             return false;
         }
@@ -28,4 +30,5 @@ const pathValidation = (currentPath, routePath) => {
     return params;
 };
 
-export { getPathname, getQuery, pathValidation };
+
+export { getPathname, getQuery, pathValidation};

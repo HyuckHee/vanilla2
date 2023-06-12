@@ -1,5 +1,5 @@
 import routerContext from './router-context.js';
-import { getPathname, getQuery, pathValidation } from './utils.js';
+import {getPathname, getQuery, pathValidation} from './utils.js';
 
 export default class {
     constructor(target, routes, NotFoundPage) {
@@ -13,6 +13,7 @@ export default class {
         this.route();
         this.addLinkChangeHandler();
         this.addBackChangeHandler();
+        console.log('b')
     }
 
     set() {
@@ -45,6 +46,7 @@ export default class {
             e.preventDefault();
             const pathname = closest.getAttribute('href');
             this.push(pathname);
+            console.log(2)
         });
     }
 
